@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dicoding.naufal.myfavoritegithubusers">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.dicoding.naufal.githubuser.READ_DATABASE"/>
+    <uses-permission android:name="com.dicoding.naufal.githubuser.WRITE_DATABASE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GithubUser">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SettingActivity"
+            android:label="@string/open_settings"
+            android:parentActivityName=".FavoriteUserActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".FavoriteUserActivity" />
+        </activity>
+        <activity android:name=".FavoriteUserActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity android:name=".DetailUserActivity"
+            android:label="@string/detail_label"
+            android:noHistory="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".FavoriteUserActivity" />
+        </activity>
+    </application>
+
+    <queries>
+        <package android:name="com.dicoding.naufal.githubuser"/>
+    </queries>
+
+</manifest>

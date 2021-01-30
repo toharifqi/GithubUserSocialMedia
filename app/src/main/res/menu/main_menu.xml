@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_baseline_search"
+        android:title="@string/search_user_title"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|always"/>
+    <item
+        android:id="@+id/action_favorite_users"
+        android:title="@string/favorite_users"
+        android:icon="@drawable/ic_baseline_favorite"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_change_settings"
+        android:title="@string/open_settings"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/close_app"
+        android:icon="@drawable/ic_baseline_settings"
+        android:title="@string/close_menu"/>
+</menu>

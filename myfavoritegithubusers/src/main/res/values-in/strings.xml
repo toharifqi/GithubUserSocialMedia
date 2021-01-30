@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Favorite Github Users</string>
+    <string name="splash_title">My Favorite Github Users</string>
+    <string name="name_user">Nama User</string>
+    <string name="lorem">lorem ipsum dolor sit amet</string>
+    <string name="full_name">Nama lengkap</string>
+    <string name="username">anonymous12</string>
+    <string name="_10">10</string>
+    <string name="repositories">repositori</string>
+    <string name="followers">pengikut</string>
+    <string name="following">mengikuti</string>
+    <string name="_100">100</string>
+    <string name="_200">200</string>
+    <string name="location_desc">Nowhere area of Indonesia</string>
+    <string name="location">Lokasi</string>
+    <string name="company_desc">Nobody Corp</string>
+    <string name="company">Perusahaan</string>
+    <string name="close_menu">Tutup aplikasi</string>
+    <string name="search_user_title">Cari pengguna</string>
+    <string name="user_id">Id pengguna: %1$s</string>
+    <string name="search_guide">Enter username of the user you are looking for in searchbar above!</string>
+    <string name="tab_text_1">Pengikut</string>
+    <string name="tab_text_2">Mengikuti</string>
+    <string name="open_settings">Pengaturan</string>
+    <string name="main_label">Cari Pengguna Github</string>
+    <string name="detail_label">Detail Pengguna</string>
+    <string name="favorite_users">Akun Favorit</string>
+    <string name="snackbar_added_message">%1$s ditambahkan ke pengguna favorit!</string>
+    <string name="snackbar_deleted_message">%1$s dihapus dari pengguna favorit!</string>
+    <string name="empty_favorite">Belum ada pengguna favorit!</string>
+    <string name="add_failed">Gagal menambah data</string>
+    <string name="delete_failed">Gagal menghapus data</string>
+    <string name="reminder_text">Pengingat pada jam 9:00 WIB</string>
+    <string name="reminder_key">Reminder</string>
+    <string name="current_language">English</string>
+    <string name="language_key">language</string>
+    <string name="language_text">Pilih Bahasa</string>
+    <string name="notif_message">Ayo temukan akun-akun populer di Github!</string>
+    <string name="alarmset_message">Pengingat pada jam 9:00 WIB telah diatur</string>
+    <string name="alarmcanceled_message">Pengingat pada jam 9:00 WIB dibatalkan</string>
+
+</resources>
