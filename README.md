@@ -1,2 +1,3 @@
 # GithubUserSocialMedia
+![alt text](https://repository-images.githubusercontent.com/334327811/155f2a80-62f5-11eb-99f2-b5306727834a)
 this is my final project from my finished course (Andorid's Fundamental) at dicoding.com. You can change the Github API token with your own by editing the gradle.properties file and resync the project. Have a nice day...
