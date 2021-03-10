@@ -110,7 +110,7 @@ class UserViewModel: ViewModel() {
                     401 -> "$statusCode: Bad Request"
                     403 -> "$statusCode: Forbidden"
                     404 -> "$statusCode: Not Found"
-                    else -> "$statusCode: ${error?.message}"
+                    else -> "$statusCode: ${error.message}"
                 }
                 statusMessage.value = Event(errorMessage)
 

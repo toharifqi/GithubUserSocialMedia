@@ -34,7 +34,7 @@ class SettingPreferenceFragment: PreferenceFragmentCompat(),
         LANGUAGE = resources.getString(R.string.language_key)
 
         languagePreference = findPreference<Preference>(LANGUAGE) as Preference
-        val currentLanguage = Locale.getDefault().getDisplayLanguage()
+        val currentLanguage = Locale.getDefault().displayLanguage
         languagePreference.summary = currentLanguage
     }
 

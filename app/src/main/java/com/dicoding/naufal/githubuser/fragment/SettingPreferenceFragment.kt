@@ -44,7 +44,7 @@ class SettingPreferenceFragment: PreferenceFragmentCompat(),
 
         reminderPreference = findPreference<SwitchPreference>(REMINDER) as SwitchPreference
         languagePreference = findPreference<Preference>(LANGUAGE) as Preference
-        val currentLanguage = Locale.getDefault().getDisplayLanguage()
+        val currentLanguage = Locale.getDefault().displayLanguage
         languagePreference.summary = currentLanguage
     }
 

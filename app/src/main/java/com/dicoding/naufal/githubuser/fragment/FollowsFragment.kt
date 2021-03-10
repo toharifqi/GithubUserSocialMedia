@@ -12,20 +12,20 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.naufal.githubuser.DetailUserActivity
 import com.dicoding.naufal.githubuser.adapter.UserAdapter
-import com.dicoding.naufal.githubuser.databinding.FragmentFollowerBinding
+import com.dicoding.naufal.githubuser.databinding.FragmentFollowsBinding
 import com.dicoding.naufal.githubuser.model.UserModel
 import com.dicoding.naufal.githubuser.viewmodel.UserViewModel
 
 class FollowsFragment : Fragment() {
 
-    private var _binding: FragmentFollowerBinding? = null
-    private val binding get() = _binding!!
+    private var _binding: FragmentFollowsBinding? = null
+    private val binding get() = _binding as FragmentFollowsBinding
     private lateinit var adapter: UserAdapter
     private lateinit var userViewModel: UserViewModel
 
     companion object{
-        private val ARG_USERNAME = "username"
-        private val INPUT_KEY = "input_key"
+        private const val ARG_USERNAME = "username"
+        private const val INPUT_KEY = "input_key"
 
         fun newInstance(username: String?, inputKey: String?): FollowsFragment{
             val fragment = FollowsFragment()
@@ -39,9 +39,8 @@ class FollowsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        _binding = FragmentFollowerBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        _binding = FragmentFollowsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,14 +61,13 @@ class FollowsFragment : Fragment() {
 
         userViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(UserViewModel::class.java)
 
-        userViewModel.getUser().observe(viewLifecycleOwner, object : Observer<ArrayList<UserModel>> {
-            override fun onChanged(userItems: ArrayList<UserModel>) {
+        userViewModel.getUser().observe(viewLifecycleOwner,
+            { userItems ->
                 if (userItems != null){
                     adapter.setData(userItems)
                     showLoading(false)
                 }
-            }
-        })
+            })
         userViewModel.message.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let {
                 Toast.makeText(context, it, Toast.LENGTH_LONG).show()

@@ -130,6 +130,8 @@ class DetailUserActivity : AppCompatActivity() {
                     val responseObjects = JSONObject(result)
 
                     Glide.with(this@DetailUserActivity).load(responseObjects.getString("avatar_url"))
+                        .placeholder(R.drawable.ic_baseline_person_white)
+                        .error(R.drawable.ic_baseline_broken_image_white)
                         .apply(RequestOptions().override(150, 150))
                         .into(binding.ivAvatar)
                     binding.tvFullname.text = responseObjects.getString("name")
@@ -157,7 +159,7 @@ class DetailUserActivity : AppCompatActivity() {
                     401 -> "$statusCode: Bad Request"
                     403 -> "$statusCode: Forbidden"
                     404 -> "$statusCode: Not Found"
-                    else -> "$statusCode: ${error?.message}"
+                    else -> "$statusCode: ${error.message}"
                 }
                 Toast.makeText(this@DetailUserActivity, errorMessage, Toast.LENGTH_SHORT).show()
             }
@@ -197,8 +199,8 @@ class DetailUserActivity : AppCompatActivity() {
 
         val searchItem = menu?.findItem(R.id.search)
         val favoriteItem = menu?.findItem(R.id.action_favorite_users)
-        searchItem?.setVisible(false)
-        favoriteItem?.setVisible(false)
+        searchItem?.isVisible = false
+        favoriteItem?.isVisible = false
 
         return true
     }

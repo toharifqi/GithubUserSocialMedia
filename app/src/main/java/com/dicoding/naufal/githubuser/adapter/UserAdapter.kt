@@ -44,6 +44,8 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.ViewHolder>() {
                 txtUsername.text = user.username
                 txtIduser.text = itemView.resources.getString(R.string.user_id, user.userId)
                 Glide.with(itemView.context).load(user.avatar)
+                    .placeholder(R.drawable.ic_baseline_person_white)
+                    .error(R.drawable.ic_baseline_broken_image_white)
                     .apply(RequestOptions().override(65, 65))
                     .into(userPhoto)
                 itemView.setOnClickListener{

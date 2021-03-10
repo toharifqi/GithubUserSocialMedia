@@ -20,7 +20,7 @@ class StackRemoteViewsFactory(private val mContext: Context): RemoteViewsService
         val thread: Thread = object : Thread() {
             override fun run() {
                 val cursor = mContext.contentResolver.query(UserContract.UserColumns.CONTENT_URI, null, null, null, null)
-                var mData = MappingHelper.mapCursorToArrayList(cursor)
+                val mData = MappingHelper.mapCursorToArrayList(cursor)
                 for (userModel in mData){
                     try {
                         val bitmap = Glide.with(mContext)

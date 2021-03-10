@@ -121,8 +121,8 @@ class FavoriteUserActivity : AppCompatActivity() {
 
         val searchItem = menu?.findItem(R.id.search)
         val favoriteItem = menu?.findItem(R.id.action_favorite_users)
-        searchItem?.setVisible(false)
-        favoriteItem?.setVisible(false)
+        searchItem?.isVisible = false
+        favoriteItem?.isVisible = false
 
         return true
     }

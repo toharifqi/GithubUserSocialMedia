@@ -10,7 +10,7 @@ def GITHUB_API_KEY = '"' + MyPersonalGithubToken + '"' ?: '"Define your The GITH
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.dicoding.naufal.githubuser"
@@ -63,7 +63,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.loopj.android:android-async-http:1.4.11'
     implementation 'com.github.amarjain07:StickyScrollView:1.0.2'
     implementation 'androidx.preference:preference:1.1.1'
     implementation "androidx.fragment:fragment-ktx:1.2.5"
