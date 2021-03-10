@@ -52,7 +52,7 @@ class DetailUserActivity : AppCompatActivity() {
         avatarUrl = userModel?.avatar
 
         if (userModel != null){
-            uriWithId = Uri.parse(CONTENT_URI.toString() + "/" + userId)
+            uriWithId = Uri.parse("${CONTENT_URI}/$userId")
         }
 
         getUserDetail(userName)

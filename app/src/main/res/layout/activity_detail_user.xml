@@ -91,8 +91,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="18dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="18dp"
                         android:text="@string/repositories"
                         android:textColor="@color/white" />
 
@@ -106,8 +106,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="18dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="18dp"
                         android:text="@string/followers"
                         android:textColor="@color/white" />
 
@@ -121,8 +121,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="18dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="18dp"
                         android:text="@string/following"
                         android:textColor="@color/white" />
                 </LinearLayout>
@@ -163,6 +163,7 @@
         android:src="@drawable/ic_baseline_favorite_border"
         android:layout_margin="16dp"
         app:borderWidth="0dp"
-        app:tint="@color/white_primary"/>
+        app:tint="@color/white_primary"
+        android:contentDescription="@string/fab_contentdesc" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

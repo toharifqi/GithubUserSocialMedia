@@ -12,7 +12,6 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.naufal.githubuser.adapter.UserAdapter
 import com.dicoding.naufal.githubuser.database.UserContract.UserColumns.Companion.CONTENT_URI
-import com.dicoding.naufal.githubuser.database.UserHelper
 import com.dicoding.naufal.githubuser.databinding.ActivityFavoriteUserBinding
 import com.dicoding.naufal.githubuser.helper.MappingHelper
 import com.dicoding.naufal.githubuser.helper.VariableHelper.Companion.isFromFavorite
@@ -88,8 +87,8 @@ class FavoriteUserActivity : AppCompatActivity() {
         }
     }
 
-    private fun showDesclaimer(b: Boolean) {
-        if (b){
+    private fun showDesclaimer(isFavEmpty: Boolean) {
+        if (isFavEmpty){
             binding.emptyLinear.visibility = View.VISIBLE
             showSnackbarMessage(getString(R.string.empty_favorite))
         }else{

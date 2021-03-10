@@ -24,7 +24,7 @@ class FollowerFragment : Fragment() {
     private lateinit var userViewModel: UserViewModel
 
     companion object{
-        private val ARG_USERNAME = "username"
+        private const val ARG_USERNAME = "username"
 
         fun newInstance(username: String?): FollowerFragment{
             val fragment = FollowerFragment()
@@ -60,12 +60,10 @@ class FollowerFragment : Fragment() {
 
         userViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(UserViewModel::class.java)
 
-        userViewModel.getUser().observe(viewLifecycleOwner, object : Observer<ArrayList<UserModel>> {
-            override fun onChanged(userItems: ArrayList<UserModel>) {
-                if (userItems != null){
-                    adapter.setData(userItems)
-                    showLoading(false)
-                }
+        userViewModel.getUser().observe(viewLifecycleOwner, { userItems ->
+            if (userItems != null){
+                adapter.setData(userItems)
+                showLoading(false)
             }
         })
         userViewModel.message.observe(viewLifecycleOwner, Observer {

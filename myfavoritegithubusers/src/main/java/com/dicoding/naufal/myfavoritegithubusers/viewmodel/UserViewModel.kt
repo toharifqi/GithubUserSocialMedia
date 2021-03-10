@@ -66,7 +66,7 @@ class UserViewModel: ViewModel() {
                 try {
                     val result = String(responseBody)
 
-                    if (search == true){
+                    if (search){
                         val responseObject = JSONObject(result)
                         val list = responseObject.getJSONArray("items")
 

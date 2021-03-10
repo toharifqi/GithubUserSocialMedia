@@ -18,9 +18,9 @@ internal class DatabaseHelper(context: Context) : SQLiteOpenHelper(context,
         private const val DATABASE_VERSION = 1
 
         private const val SQL_CREATE_TABLE_FAVORITE = "CREATE TABLE $TABLE_NAME" +
-                " (${COLUMN_NAME_USERID} TEXT PRIMARY KEY," +
-                " ${COLUMN_NAME_USERNAME} TEXT NOT NULL," +
-                " ${COLUMN_NAME_AVATAR_URL} TEXT NOT NULL)"
+                " ($COLUMN_NAME_USERID TEXT PRIMARY KEY," +
+                " $COLUMN_NAME_USERNAME TEXT NOT NULL," +
+                " $COLUMN_NAME_AVATAR_URL TEXT NOT NULL)"
     }
 
     override fun onCreate(db: SQLiteDatabase) {

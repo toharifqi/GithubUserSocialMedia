@@ -14,8 +14,8 @@ import java.util.*
 class SettingPreferenceFragment: PreferenceFragmentCompat(),
     SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private lateinit var REMINDER: String
-    private lateinit var LANGUAGE: String
+    private lateinit var reminder: String
+    private lateinit var language: String
 
     private lateinit var reminderPreference: SwitchPreference
     private lateinit var languagePreference: Preference
@@ -34,16 +34,16 @@ class SettingPreferenceFragment: PreferenceFragmentCompat(),
 
     private fun setState() {
         val sh = preferenceManager.sharedPreferences
-        reminderPreference.isChecked = sh.getBoolean(REMINDER, false)
+        reminderPreference.isChecked = sh.getBoolean(reminder, false)
     }
 
     private fun init() {
         alarmReceiver = AlarmReceiver()
-        REMINDER = resources.getString(R.string.reminder_key)
-        LANGUAGE = resources.getString(R.string.language_key)
+        reminder = resources.getString(R.string.reminder_key)
+        language = resources.getString(R.string.language_key)
 
-        reminderPreference = findPreference<SwitchPreference>(REMINDER) as SwitchPreference
-        languagePreference = findPreference<Preference>(LANGUAGE) as Preference
+        reminderPreference = findPreference<SwitchPreference>(reminder) as SwitchPreference
+        languagePreference = findPreference<Preference>(language) as Preference
         val currentLanguage = Locale.getDefault().displayLanguage
         languagePreference.summary = currentLanguage
     }
@@ -59,8 +59,8 @@ class SettingPreferenceFragment: PreferenceFragmentCompat(),
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
-        if (key == REMINDER){
-            reminderPreference.isChecked = sharedPreferences.getBoolean(REMINDER, false)
+        if (key == reminder){
+            reminderPreference.isChecked = sharedPreferences.getBoolean(reminder, false)
             if (reminderPreference.isChecked){
                 alarmReceiver.setAlarm(context)
             }else{

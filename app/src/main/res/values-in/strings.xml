@@ -42,4 +42,5 @@
     <string name="alarmcanceled_message">Pengingat pada jam 9:00 WIB dibatalkan</string>
     <string name="appwidget_text">AKUN FAV GITHUB</string>
     <string name="empty_text">DATA KOSONG</string>
+    <string name="add_widget">Tambah widget</string>
 </resources>

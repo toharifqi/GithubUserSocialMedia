@@ -2,6 +2,7 @@ package com.dicoding.naufal.githubuser.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -43,15 +44,20 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.ViewHolder>() {
             with(binding){
                 txtUsername.text = user.username
                 txtIduser.text = itemView.resources.getString(R.string.user_id, user.userId)
-                Glide.with(itemView.context).load(user.avatar)
-                    .placeholder(R.drawable.ic_baseline_person_white)
-                    .error(R.drawable.ic_baseline_broken_image_white)
-                    .apply(RequestOptions().override(65, 65))
-                    .into(userPhoto)
+                userPhoto.loadImage(user.avatar)
                 itemView.setOnClickListener{
                     onItemClickCallBack?.onItemClicked(user, position)
                 }
             }
         }
+    }
+
+    fun ImageView.loadImage(url: String?){
+        Glide.with(this.context)
+            .load(url)
+            .placeholder(R.drawable.ic_baseline_person_white)
+            .error(R.drawable.ic_baseline_broken_image_white)
+            .apply(RequestOptions().override(65, 65))
+            .into(this)
     }
 }
